@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraveFinder — Craving → Nearby Food, Instantly</title>
+    <meta name="description" content="Describe what you're craving and find the best food nearby. On-device AI, private by design, no account needed.">
+    <meta property="og:title" content="CraveFinder">
+    <meta property="og:description" content="Describe what you're craving and find the best food nearby.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zhongjie526.github.io/crave-finder-site/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #1a1a1a;
+            --bg-card: #242424;
+            --text: #f5f5f5;
+            --text-muted: #a0a0a0;
+            --accent: #e8820e;
+            --accent-glow: rgba(232, 130, 14, 0.25);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero .tagline {
+            font-size: 20px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            font-weight: 400;
+        }
+
+        .app-store-badge {
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        .app-store-badge img {
+            height: 54px;
+        }
+
+        /* Screenshots */
+        .screenshots {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 40px 20px;
+            text-align: center;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .screenshots img {
+            display: inline-block;
+            height: 580px;
+            border-radius: 24px;
+            margin: 0 12px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Features */
+        .features {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 48px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 28px;
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .feature-card .icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* How it works */
+        .how-it-works {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .how-it-works h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 48px;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            text-align: left;
+        }
+
+        .step {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: #fff;
+            font-size: 22px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-text h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .step-text p {
+            font-size: 15px;
+            color: var(--text-muted);
+        }
+
+        /* Privacy */
+        .privacy-banner {
+            text-align: center;
+            padding: 60px 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .privacy-banner .icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .privacy-banner h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .privacy-banner p {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #333;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            margin: 0 12px;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 32px; }
+            .hero .tagline { font-size: 17px; }
+            .screenshots img { height: 420px; }
+            .features h2, .how-it-works h2 { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <div class="hero-icon">🍽️</div>
+    <h1><span>Crave</span>Finder</h1>
+    <p class="tagline">Describe what you're craving. Find the best food nearby.</p>
+    <a class="app-store-badge" href="https://apps.apple.com/app/cravefinder/id6781291486">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+    </a>
+</section>
+
+<section class="screenshots">
+    <img src="screenshots/screenshot_3.png" alt="CraveFinder — Sushi search results">
+    <img src="screenshots/screenshot_1.png" alt="CraveFinder — Bugis BBQ search in Chinese">
+    <img src="screenshots/screenshot_2.png" alt="CraveFinder — Spicy food results">
+</section>
+
+<section class="how-it-works">
+    <h2>How it works</h2>
+    <div class="steps">
+        <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-text">
+                <h3>Describe your craving</h3>
+                <p>Type anything — "something spicy", "sushi", "Bugis 附近的烧烤". Use any language. Be as vague or specific as you want.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-text">
+                <h3>AI finds what you mean</h3>
+                <p>An on-device AI understands your craving and searches for matching restaurants. Mention a neighborhood and it searches there.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-text">
+                <h3>Pick a spot and go</h3>
+                <p>Browse results sorted by distance or rating. Preview photos, reviews, and hours. Tap to navigate in Google Maps.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <h2>Features</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="icon">📍</div>
+            <h3>Search any area</h3>
+            <p>Mention a neighborhood — "ramen in Bukit Panjang", "pizza near Orchard" — and CraveFinder searches there, not just where you are.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🌏</div>
+            <h3>Any language</h3>
+            <p>Type in English, Chinese, Malay, or any language. The AI understands what you're craving regardless of how you say it.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">👁️</div>
+            <h3>Preview before you go</h3>
+            <p>Photos, reviews, opening hours, contact info, and editorial summaries — all in one tap. Then navigate straight there.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🔀</div>
+            <h3>Sort &amp; filter</h3>
+            <p>Switch between distance and rating. Filter by cuisine type. Adjust search radius from 1km to 20km.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">⚡</div>
+            <h3>Quick chips</h3>
+            <p>Not sure what you want? Tap a suggestion chip — Sushi, Spicy, Dessert, Burgers — and discover something new.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">📶</div>
+            <h3>Works offline</h3>
+            <p>Recent searches are cached on-device. Lose signal? Your results still work. Cache refreshes when you move to a new area.</p>
+        </div>
+    </div>
+</section>
+
+<section class="privacy-banner">
+    <div class="icon">🔒</div>
+    <h2>Private by design</h2>
+    <p>
+        Everything runs on your device. Your cravings, your location, your conversations — none of it leaves your phone.
+        No account. No login. No tracking. No ads. The AI model runs locally, not in the cloud.
+        We don't collect any data because there's nothing to collect.
+    </p>
+</section>
+
+<footer>
+    <p>&copy; 2026 Frank Zhang. All rights reserved.</p>
+    <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="support.html">Support</a>
+    </div>
+</footer>
+
+</body>
+</html>
