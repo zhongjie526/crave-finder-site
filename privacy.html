@@ -60,26 +60,37 @@
     <p class="updated">Last updated: April 10, 2026</p>
 
     <h2>The short version</h2>
-    <p>CraveFinder does not collect, store, or transmit any personal data. Everything runs on your device.</p>
+    <p>CraveFinder does not collect, store, or sell any personal data. Your cravings are processed via Google's Gemini AI to understand what you want, then nearby restaurants are found using Google Places. We do not operate any servers or databases.</p>
 
     <h2>Data we collect</h2>
-    <p><strong>None.</strong> We do not collect any personal information, usage data, analytics, or diagnostics.</p>
+    <p><strong>None.</strong> We do not collect any personal information, usage data, analytics, or diagnostics. We do not operate any backend servers.</p>
 
-    <h2>On-device AI</h2>
-    <p>CraveFinder uses an AI model that runs entirely on your iPhone or iPad. Your conversations and cravings are processed locally and never sent to any server. The model file is downloaded once during setup and runs offline thereafter.</p>
+    <h2>How AI works in CraveFinder</h2>
+    <p>CraveFinder uses Google's Gemini API to understand your food cravings and generate search keywords. When you type a message:</p>
+    <ul>
+        <li>Your message is sent to Google's Gemini API to interpret your craving</li>
+        <li>Gemini returns a short response and food search keywords</li>
+        <li>These keywords are then used to search Google Places for nearby restaurants</li>
+    </ul>
+    <p>Your messages are processed by Google's Gemini API under <a href="https://ai.google.dev/gemini-api/terms">Google's API Terms of Service</a>. Google states that data sent through the paid Gemini API is not used to train their models. We do not store, log, or have access to your conversations — they go directly from your device to Google's servers.</p>
 
     <h2>Location</h2>
     <p>CraveFinder requests your location solely to find nearby restaurants. Your location is:</p>
     <ul>
-        <li>Used only on your device to search for nearby places</li>
-        <li>Sent to Google Places API as coordinates to find restaurants (Google's standard API — no personal identifiers attached)</li>
+        <li>Sent to Google Places API as coordinates to find restaurants nearby</li>
         <li>Never stored on any server we operate</li>
-        <li>Never shared with any third party beyond the Google Places API request</li>
+        <li>Never shared with any third party beyond Google's APIs</li>
     </ul>
     <p>You can deny location access and still use the app by mentioning a location in your message (e.g., "ramen in Bukit Panjang").</p>
 
-    <h2>Google Places API</h2>
-    <p>CraveFinder uses Google Places API to find restaurants. When you search for food, your approximate location and search keywords are sent to Google's servers to retrieve restaurant results. This is subject to <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. No account information or personal identifiers are included in these requests.</p>
+    <h2>Google Services</h2>
+    <p>CraveFinder uses the following Google services:</p>
+    <ul>
+        <li><strong>Gemini API</strong> — to understand your food cravings and generate search keywords</li>
+        <li><strong>Google Places API</strong> — to find nearby restaurants, retrieve reviews, photos, and hours</li>
+        <li><strong>Google Maps SDK</strong> — to display restaurant locations on a map</li>
+    </ul>
+    <p>All interactions with Google's services are subject to <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. No account information or personal identifiers are included in these requests.</p>
 
     <h2>No accounts</h2>
     <p>CraveFinder does not require or support user accounts, logins, sign-ups, or any form of registration.</p>
@@ -88,13 +99,13 @@
     <p>CraveFinder contains no analytics, no advertising SDKs, no tracking pixels, and no third-party data collection of any kind.</p>
 
     <h2>Cached data</h2>
-    <p>Search results are cached locally on your device to improve performance and enable offline access. This data is stored only on your device and is never transmitted. You can clear the cache at any time from Settings.</p>
+    <p>Search results are cached locally on your device to improve performance. This data is stored only on your device and is never transmitted. You can clear the cache at any time from Settings.</p>
 
     <h2>Children's privacy</h2>
     <p>CraveFinder does not knowingly collect any information from children under 13. Since the app collects no data from anyone, this applies equally to all users.</p>
 
     <h2>Changes to this policy</h2>
-    <p>If we ever change this privacy policy, we will update this page. Given that CraveFinder collects no data, we don't anticipate significant changes.</p>
+    <p>If we change this privacy policy, we will update this page with the new date.</p>
 
     <h2>Contact</h2>
     <p>Questions or concerns? Email us at <a href="mailto:zzj.anonymous@gmail.com">zzj.anonymous@gmail.com</a>.</p>
